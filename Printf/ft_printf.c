@@ -6,7 +6,7 @@
 /*   By: ral-bakr <ral-bakr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 14:49:14 by ral-bakr          #+#    #+#             */
-/*   Updated: 2023/11/26 20:48:54 by ral-bakr         ###   ########.fr       */
+/*   Updated: 2023/11/29 15:17:59 by ral-bakr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ int	ft_check(char after_percent, va_list arguments)
 		return (ft_print_capital_x(va_arg(arguments, unsigned int)));
 	else if (after_percent == '%')
 		return (ft_putchar('%'));
+	else
+		return (write(1, &after_percent, 1));
 	return (0);
 }
 
@@ -85,13 +87,3 @@ int	ft_printf(const char *string, ...)
 	}
 	return (characters_printed);
 }
-
-// int	main(void)
-// {
-// 	// int a = 2;
-// 	char *s = NULL;
-
-// 	ft_printf("%s\n", s);
-// 	printf("%s\n", s);
-// 	return (0);
-// }
